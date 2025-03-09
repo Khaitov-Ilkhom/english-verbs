@@ -1,33 +1,93 @@
-import {Button} from "@/components/ui/button";
-import {motion, AnimatePresence} from "framer-motion";
-import {useLanguageStore} from "@/store/languageStore.ts";
+import {useEffect, useRef, useState} from "react";
+import {ChevronDown} from "lucide-react";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import i18n from "@/i18n";
+import {cn} from "@/lib/utils";
+import {useLanguageStore} from "@/store/languageStore.ts";
+
+const languageList = [
+  {
+    value: "ru",
+    label: "Русский",
+    short: "Ру",
+  },
+  {
+    value: "uz",
+    label: "O'zbek",
+    short: "O'z",
+  },
+];
 
 const Language = () => {
   const {language, setLanguage} = useLanguageStore();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  function toggleLanguage() {
-    const newLanguage = language === "uz" ? "ru" : "uz";
-    setLanguage(newLanguage);
-    i18n.changeLanguage(newLanguage);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  function handleLanguage(lng: string) {
+    setLanguage(lng);
+    i18n.changeLanguage(lng);
   }
 
   return (
-      <Button variant="outline" onClick={toggleLanguage} className="relative w-12 overflow-hidden text-black">
-        <AnimatePresence mode="wait">
-          <motion.span
-              key={language}
-              initial={{y: 20, opacity: 0}}
-              animate={{y: 0, opacity: 1}}
-              exit={{y: -20, opacity: 0}}
-              transition={{duration: 0.2}}
-              className="block"
+      <div className="relative inline-block" ref={dropdownRef}>
+        <DropdownMenu modal={false}>
+          <DropdownMenuTrigger
+              className="flex h-9 items-center gap-2 rounded-md border p-1 text-sm font-medium shadow-sm transition-colors"
+              onClick={() => setIsOpen((prev) => !prev)}
           >
-            {language === "uz" ? "O'z" : "Ру"}
-          </motion.span>
-        </AnimatePresence>
-      </Button>
+            {languageList.map(
+                (item) =>
+                    item.value === language && (
+                        <span key={item.value} className="truncate">
+                  {item.short}
+                </span>
+                    ),
+            )}
+            <ChevronDown
+                size={15}
+                className={cn(
+                    "transition-transform duration-300",
+                    isOpen ? "rotate-180" : "rotate-0",
+                )}
+            />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="space-y-1">
+            {languageList.map((item) => (
+                <DropdownMenuItem
+                    key={item.value}
+                    onClick={() => handleLanguage(item.value)}
+                    className={`cursor-pointer text-sm ${item.value === language && "bg-muted"}`}
+                >
+                  {item.label}
+                </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
   );
-}
+};
 
 export default Language;
