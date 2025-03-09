@@ -34,17 +34,17 @@ const TableVerbs = () => {
           <TabsContent value="table" className="w-full">
             <div className="rounded-lg shadow-md overflow-hidden">
               <div className="overflow-x-auto">
-                <Table className={`w-full ${isDarkMode ? "bg-[#17181B] text-white" : ""}`}>
+                <Table className={`w-full table-fixed ${isDarkMode ? "bg-[#17181B] text-white" : ""}`}>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="w-9 text-center">#</TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Infinitive
+                      <TableHead className="w-12 text-center">#</TableHead>
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Infinitive
                         V<sub>1</sub></TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Past Simple
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Past Simple
                         V<sub>2</sub></TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Past Participle
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Past Participle
                         V<sub>3</sub></TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">{t("O'zbek")}</TableHead>
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">{t("O'zbek")}</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -57,13 +57,11 @@ const TableVerbs = () => {
                                 transition={{duration: 0.3, delay: index * 0.02}}
                                 className="border-b hover:bg-muted/50 duration-400 "
                             >
-                              <TableCell className="text-center font-semibold">{index + 1}</TableCell>
-                              <TableCell className="font-medium pl-4">{verb.verb1}</TableCell>
-                              <TableCell className="pl-4">{verb.verb2}</TableCell>
-                              <TableCell className="pl-4">{verb.verb3}</TableCell>
-                              <TableCell className="pl-4">
-                                {t(`${verb.verb1}`)}
-                              </TableCell>
+                              <TableCell className="w-12 text-center font-semibold">{index + 1}</TableCell>
+                              <TableCell className="w-1/4 font-medium pl-4">{verb.verb1}</TableCell>
+                              <TableCell className="w-1/4 pl-4">{verb.verb2}</TableCell>
+                              <TableCell className="w-1/4 pl-4">{verb.verb3}</TableCell>
+                              <TableCell className="w-1/4 pl-4">{t(`${verb.verb1}`)}</TableCell>
                             </motion.tr>
                         ))
                     ) : (
