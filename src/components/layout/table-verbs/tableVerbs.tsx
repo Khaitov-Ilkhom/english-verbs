@@ -38,9 +38,12 @@ const TableVerbs = () => {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="w-9 text-center">#</TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Infinitive</TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Past Simple</TableHead>
-                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Past Participle</TableHead>
+                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Infinitive
+                        V<sub>1</sub></TableHead>
+                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Past Simple
+                        V<sub>2</sub></TableHead>
+                      <TableHead className="max-w-20 text-center font-semibold text-[16px]">Past Participle
+                        V<sub>3</sub></TableHead>
                       <TableHead className="max-w-20 text-center font-semibold text-[16px]">{t("O'zbek")}</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -79,7 +82,7 @@ const TableVerbs = () => {
           <TabsContent value="cards">
             {filteredVerbs.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-3">
-                  {verbs.map((verb, index) => (
+                  {filteredVerbs.map((verb, index) => (
                       <motion.div
                           key={index}
                           initial={{opacity: 0, scale: 0.95}}
