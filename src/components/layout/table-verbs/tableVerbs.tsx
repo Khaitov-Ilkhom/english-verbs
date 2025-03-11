@@ -38,10 +38,13 @@ const TableVerbs = () => {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="w-12 text-center">#</TableHead>
-                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Infinitive V<sub>1</sub></TableHead>
-                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Past Simple V<sub>2</sub></TableHead>
-                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Past Participle V<sub>3</sub></TableHead>
-                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">{t("Русский")}</TableHead>
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Infinitive
+                        V<sub>1</sub></TableHead>
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Past Simple
+                        V<sub>2</sub></TableHead>
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">Past Participle
+                        V<sub>3</sub></TableHead>
+                      <TableHead className="w-1/4 text-center font-semibold text-[16px]">{t("O'zbek")}</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
