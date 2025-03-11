@@ -2,6 +2,7 @@ import "./i18n"
 import Navbar from "@/components/layout/navbar/navbar.tsx";
 import TableVerbs from "@/components/layout/table-verbs/tableVerbs.tsx";
 import {useThemeStore} from "@/store/themeStore.ts";
+import ScrollToTop from "@/components/layout/scroll-to-top/scrollToTop.tsx";
 
 const App = () => {
   const {isDarkMode} = useThemeStore();
@@ -17,7 +18,11 @@ const App = () => {
         </div>
         <TableVerbs/>
 
-        <p className="w-full text-center pb-4">Copyright © 2025 Irregular-verbs Created by <b><a className="italic" href="https://t.me/KhaitovIlhom">Khaitov Ilkhom</a></b>. All rights reserved.</p>
+        <p className="w-full text-center pb-4">Copyright © 2025 Irregular-verbs Created by <b><a className="italic"
+                                                                                                 href="https://t.me/KhaitovIlhom">Khaitov
+          Ilkhom</a></b>. All rights reserved.</p>
+
+        <ScrollToTop/>
       </div>
   )
 }

@@ -80,7 +80,7 @@ const TableVerbs = () => {
                           animate={{opacity: 1, scale: 1}}
                           transition={{duration: 0.3, delay: index * 0.01}}
                       >
-                        <Card className={`h-full ${isDarkMode ? "bg-[#17181B] text-white/90" : ""}`}>
+                        <Card className={`h-full hover:shadow-lg duration-500 ${isDarkMode ? "bg-[#17181B] text-white/90" : ""}`}>
                           <CardContent className="py-4 px-2 flex flex-col gap-3">
                             <div className="flex justify-between items-start px-4">
                               <h3 className="text-xl font-bold ">{verb.verb1}</h3>
