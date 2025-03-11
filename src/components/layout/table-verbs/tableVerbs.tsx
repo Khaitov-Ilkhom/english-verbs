@@ -5,23 +5,15 @@ import {useThemeStore} from "@/store/themeStore.ts";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Card, CardContent} from "@/components/ui/card"
 import {motion} from "framer-motion";
-import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
 
 const TableVerbs = () => {
   const {t} = useTranslation();
   const {isDarkMode} = useThemeStore();
-  const [mounted, setMounted] = useState(false)
   const [searchParams] = useSearchParams();
   const searchValue: string | null = searchParams.get("search") || "";
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   const filteredVerbs = verbs.filter((verb) => verb.verb1.toLowerCase().includes(searchValue.toLowerCase()))
-
-  if (!mounted) return null
 
   return (
       <div className="flex justify-center px-2 md:px-4 py-6">
@@ -54,7 +46,7 @@ const TableVerbs = () => {
                                 key={index}
                                 initial={{opacity: 0, y: 10}}
                                 animate={{opacity: 1, y: 0}}
-                                transition={{duration: 0.3, delay: index * 0.02}}
+                                transition={{duration: 0.3, delay: index * 0.01}}
                                 className="border-b hover:bg-muted/50 duration-400"
                             >
                               <TableCell className="w-12 text-center font-semibold">{index + 1}</TableCell>
@@ -86,7 +78,7 @@ const TableVerbs = () => {
                           key={index}
                           initial={{opacity: 0, scale: 0.95}}
                           animate={{opacity: 1, scale: 1}}
-                          transition={{duration: 0.3, delay: index * 0.05}}
+                          transition={{duration: 0.3, delay: index * 0.01}}
                       >
                         <Card className={`h-full ${isDarkMode ? "bg-[#17181B] text-white/90" : ""}`}>
                           <CardContent className="py-4 px-2 flex flex-col gap-3">
