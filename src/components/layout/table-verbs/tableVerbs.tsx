@@ -50,9 +50,12 @@ const TableVerbs = () => {
                                 className="border-b hover:bg-muted/50 duration-400"
                             >
                               <TableCell className="w-12 text-center font-semibold">{index + 1}</TableCell>
-                              <TableCell className="w-1/4 font-medium md:pl-4 pl-2">{verb.verb1}</TableCell>
-                              <TableCell className="w-1/4 md:pl-4 pl-2">{verb.verb2}</TableCell>
-                              <TableCell className="w-1/4 md:pl-4 pl-2">{verb.verb3}</TableCell>
+                              <TableCell className="w-1/4 font-medium md:pl-4 pl-2"><p>{verb.verb1}</p>
+                                <p>{verb.pronunciation1}</p></TableCell>
+                              <TableCell className="w-1/4 md:pl-4 pl-2"><p>{verb.verb2}</p> <p>{verb.pronunciation2}</p>
+                              </TableCell>
+                              <TableCell className="w-1/4 md:pl-4 pl-2"><p>{verb.verb3}</p> <p>{verb.pronunciation3}</p>
+                              </TableCell>
                               <TableCell className="w-1/4 md:pl-4 pl-2">{t(`${verb.verb1}`)}</TableCell>
                             </motion.tr>
                         ))
@@ -80,22 +83,23 @@ const TableVerbs = () => {
                           animate={{opacity: 1, scale: 1}}
                           transition={{duration: 0.3, delay: index * 0.01}}
                       >
-                        <Card className={`h-full hover:shadow-lg duration-500 ${isDarkMode ? "bg-[#17181B] text-white/90" : ""}`}>
-                          <CardContent className="py-4 px-2 flex flex-col gap-3">
+                        <Card
+                            className={`h-full hover:shadow-lg duration-500 ${isDarkMode ? "bg-[#17181B] text-white/90" : ""}`}>
+                          <CardContent className="py-4 px-1 md:px-2 flex flex-col gap-1 md:gap-3">
                             <div className="flex justify-between items-start px-4">
-                              <h3 className="text-xl font-bold ">{verb.verb1}</h3>
+                              <div className="flex justify-start items-center gap-2"><h3 className="text-xl font-bold ">{verb.verb1}</h3> <p className="text-[14px]">{verb.pronunciation1}</p></div>
                               <span className="px-3 border border-dashed rounded-xl border-gray-500">Verb</span>
                             </div>
-                            <div className="grid grid-cols-3 gap-2 text-sm">
+                            <div className="grid grid-cols-3 gap-1 md:gap-2 text-sm">
                               <div className="flex flex-col border-r-2 text-center space-y-2">
-                                <span className="text-muted-foreground font-semibold">Past Simple</span>
-                                <span
-                                    className={`font-medium ${isDarkMode ? "text-white/80" : ""} text-gray-600`}>{verb.verb2}</span>
+                                <p className="text-muted-foreground font-semibold">Past Simple</p>
+                                <div
+                                    className={`font-medium ${isDarkMode ? "text-white/80" : ""} text-gray-600`}><p>{verb.verb2}</p> <p>{verb.pronunciation2}</p></div>
                               </div>
                               <div className="flex flex-col border-r-2 text-center space-y-2">
-                                <span className="text-muted-foreground font-semibold">Past Participle</span>
-                                <span
-                                    className={`font-medium ${isDarkMode ? "text-white/80" : ""} text-gray-600`}>{verb.verb3}</span>
+                                <p className="text-muted-foreground font-semibold">Past Participle</p>
+                                <div
+                                    className={`font-medium ${isDarkMode ? "text-white/80" : ""} text-gray-600`}><p>{verb.verb3}</p> <p>{verb.pronunciation3}</p></div>
                               </div>
                               <div className="flex flex-col text-center space-y-2">
                                 <span className="text-muted-foreground text-sm font-semibold">{t("O'zbek")}</span>
