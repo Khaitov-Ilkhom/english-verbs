@@ -217,5 +217,18 @@
   "withstand": "qarshi chiqmoq",
   "wring": "siqmoq",
   "write": "yozmoq",
-  "O'zbek": "O'zbek"
+
+  "O'zbek": "O'zbek",
+  "map": "Xarita",
+  "taxi": "Taksi",
+  "car": "Mashina",
+  "platform": "Platforma",
+  "scooter": "Skuter",
+  "underground": "Yer osti",
+  "passenger": "Yo'lovchi",
+  "train": "Poyezd",
+  "accident": "Baxtsiz hodisa",
+  "helicopter": "Vertolyot",
+  "truck": "Yuk mashinasi",
+  "high-speed": "Yuqori tezlik"
 }

@@ -6,6 +6,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {Card, CardContent} from "@/components/ui/card"
 import {motion} from "framer-motion";
 import {useSearchParams} from "react-router-dom";
+import LearnWords from "@/pages/learn-words/learnWords.tsx";
 
 const TableVerbs = () => {
   const {t} = useTranslation();
@@ -18,9 +19,10 @@ const TableVerbs = () => {
   return (
       <div className="flex justify-center px-2 md:px-4 py-6">
         <Tabs defaultValue="table" className="w-full">
-          <TabsList className="grid w-full max-w-xs mx-auto grid-cols-2 mb-6">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
             <TabsTrigger value="table">Table View</TabsTrigger>
             <TabsTrigger value="cards">Card View</TabsTrigger>
+            <TabsTrigger value="words">Learn words</TabsTrigger>
           </TabsList>
 
           <TabsContent value="table" className="w-full">
@@ -116,6 +118,10 @@ const TableVerbs = () => {
             ) : (
                 <div className="text-center py-10 text-muted-foreground">No verbs found matching your search.</div>
             )}
+          </TabsContent>
+
+          <TabsContent value="words">
+            <LearnWords/>
           </TabsContent>
         </Tabs>
       </div>

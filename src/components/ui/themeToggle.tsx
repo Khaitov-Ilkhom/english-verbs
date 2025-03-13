@@ -7,7 +7,8 @@ export function ThemeToggle() {
   const {isDarkMode, toggleTheme} = useThemeStore();
 
   return (
-      <Button variant="default" size="icon" onClick={toggleTheme} className="relative overflow-hidden">
+      <Button variant="default" size="icon" onClick={toggleTheme}
+              className={`relative overflow-hidden border border-gray-500 ${isDarkMode ? "bg-black" : "border-gray-500 bg-white text-black hover:bg-white"}`}>
         <AnimatePresence mode="wait">
           {isDarkMode ? (
               <motion.div
