@@ -217,5 +217,25 @@
   "withstand": "противостоять",
   "wring": "выжимать",
   "write": "писать",
-  "O'zbek": "Русский"
+
+  "O'zbek": "Русский",
+  "Natijalar": "Результаты",
+  "To'g'ri javoblar": "Правильные ответы",
+  "Xato javoblar": "Неправильные ответы",
+  "Qaytadan boshlash": "Начать заново",
+  "Tugatish": "Завершить",
+  "Keyingi savol": "Следующий вопрос",
+
+  "map": "Карта",
+  "taxi": "Такси",
+  "car": "Машина",
+  "platform": "Платформа",
+  "scooter": "Скутер",
+  "underground": "Под землей",
+  "passenger": "Пассажир",
+  "train": "Поезд",
+  "accident": "Несчастный случай",
+  "helicopter": "Вертолёт",
+  "truck": "Грузовик",
+  "high-speed": "Высокая скорость"
 }

@@ -137,11 +137,11 @@ const LearnWords = () => {
         <div className={`w-full min-h-[500px] flex justify-center items-center ${isDarkMode ? " text-white" : ""}`}>
           {isQuizFinished ? (
               <div className="w-full flex flex-col justify-center items-center">
-                <h2 className="text-3xl font-bold mb-2 text-center">Natijalar</h2>
+                <h2 className="text-3xl font-bold mb-2 text-center">{t("Natijalar")}</h2>
                 <div className="flex justify-center items-center gap-2">
-                  <p className="text-lg">To‘g‘ri javoblar: <span
+                  <p className="text-lg">{t("To'g'ri javoblar")}: <span
                       className="text-green-500 font-bold">{correctAnswers}</span></p>
-                  <p className="text-lg">Xato javoblar: <span
+                  <p className="text-lg">{t("Xato javoblar")}: <span
                       className="text-red-500 font-bold">{incorrectAnswers}</span>
                   </p>
                 </div>
@@ -156,15 +156,15 @@ const LearnWords = () => {
                   ))}
                 </div>
                 <Button className="mt-4 bg-indigo-500 hover:bg-indigo-600" onClick={handleRestart}>
-                  Qaytadan boshlash
+                  {t("Qaytadan boshlash")}
                 </Button>
               </div>
           ) : (
               <div className={`w-full flex justify-center items-center `}>
                 <div className="w-[350px] md:w-[500px] text-center min-h-[300px]">
-                  <h2 className={`text-3xl font-bold mb-6 capitalize ${isDarkMode ? "text-white" : "text-black"}`}>
+                  <h3 className={`text-3xl font-bold mb-6 capitalize ${isDarkMode ? "text-white" : "text-black"}`}>
                     {city[currentQuestion].word}
-                  </h2>
+                  </h3>
                   <div className="w-full grid grid-cols-2 gap-2 px-4">
                     {city[currentQuestion].questionWords.map((word) => (
                         <Button key={word} onClick={() => handleAnswerClick(word)}
@@ -176,6 +176,8 @@ const LearnWords = () => {
                         </Button>
                     ))}
                   </div>
+
+                  <p className={`mt-6 text-xl font-semibold ${isDarkMode ? "text-white" : ""}`}>{currentQuestion + 1} to {city.length}</p>
                 </div>
 
                 <div
@@ -194,7 +196,7 @@ const LearnWords = () => {
                       <Button
                           className={`font-semibold cursor-pointer ${city[currentQuestion].correctWord === selectedAnswer ? "bg-green-500 hover:bg-green-600" : "bg-red-500 hover:bg-red-600"}`}
                           onClick={handleNextQuestion}>
-                        Keyingi savol
+                        {city.length === currentQuestion ? t("Tugatish") : t("Keyingi savol")}
                       </Button>
                   )}
                 </div>
