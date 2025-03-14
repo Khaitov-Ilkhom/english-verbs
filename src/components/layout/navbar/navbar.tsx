@@ -26,7 +26,7 @@ const Navbar = ({search}: { search: boolean }) => {
 
   return (
       <nav
-          className={`fixed top-0 w-full ${isDarkMode ? "bg-[#0E1014]/70 text-white" : "bg-background/95 supports-[backdrop-filter]:bg-background/60"} backdrop-blur shadow-xl z-50`}>
+          className={`fixed top-0 max-w-[1440px] w-full mx-auto ${isDarkMode ? "bg-[#0E1014]/70 text-white" : "bg-background/95 supports-[backdrop-filter]:bg-background/60"} backdrop-blur shadow-xl z-50`}>
         <div className="w-full px-4 h-16 flex justify-between items-center gap-1 md:gap-3">
           <div className="md:flex gap-6 md:gap-10">
             <>
@@ -46,7 +46,7 @@ const Navbar = ({search}: { search: boolean }) => {
               />
             </div> : <div></div>
           }
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-start gap-2">
             <ThemeToggle/>
             <Language/>
           </div>
