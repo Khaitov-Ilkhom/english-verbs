@@ -55,7 +55,7 @@ const Language = () => {
       <div className="relative inline-block" ref={dropdownRef}>
         <DropdownMenu modal={false}>
           <DropdownMenuTrigger
-              className="flex h-9 items-center gap-2 rounded-md border p-1 border-gray-500 text-sm font-medium shadow-sm transition-colors"
+              className="flex h-9 items-center gap-2 rounded-md border px-1 bg-black/90 text-white hover:bg-black/80 border-gray-500 text-sm font-medium shadow-sm transition-colors"
               onClick={() => setIsOpen((prev) => !prev)}
           >
             {languageList.map(
