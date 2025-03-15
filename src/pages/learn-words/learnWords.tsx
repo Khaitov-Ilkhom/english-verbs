@@ -136,13 +136,13 @@ const LearnWords = () => {
 
   return (
       <div className={`flex flex-col min-h-screen ${isDarkMode ? " text-white bg-[#0E1014]" : ""}`}>
-        <Navbar search={false} />
+        <Navbar search={false}/>
 
-        <div className="flex-grow w-full min-h-[500px] flex justify-center items-center">
+        <div className="flex-grow w-full min-h-[650px] flex justify-center items-center pt-10">
           {isQuizFinished ? (
               <div className="w-full flex flex-col justify-center items-center">
                 <h2 className="text-3xl font-bold mb-2 text-center">{t("Natijalar")}</h2>
-                <div className="flex justify-center items-center gap-2">
+                <div className="flex flex-col md:flex-row justify-center items-center gap-2">
                   <p className="text-lg">{t("To'g'ri javoblar")}: <span
                       className="text-green-500 font-bold">{correctAnswers}</span></p>
                   <p className="text-lg">{t("Xato javoblar")}: <span
@@ -165,14 +165,14 @@ const LearnWords = () => {
               </div>
           ) : (
               <div className={`flex-grow w-full flex justify-center items-center `}>
-                <div className="w-[350px] md:w-[500px] text-center min-h-[300px]">
+                <div className="w-[350px] md:w-[500px] text-center ">
                   <h3 className={`text-3xl font-bold mb-6 capitalize ${isDarkMode ? "text-white" : "text-black"}`}>
                     {city[currentQuestion].word}
                   </h3>
-                  <div className="w-full grid grid-cols-2 gap-2 px-4">
+                  <div className="w-full grid grid-cols-2 gap-2 px-2">
                     {city[currentQuestion].questionWords.map((word) => (
                         <Button key={word} onClick={() => handleAnswerClick(word)}
-                                className={`bg-indigo-500 hover:bg-indigo-600 py-6 md:py-8 cursor-pointer text-lg
+                                className={`bg-indigo-500 hover:bg-indigo-600 py-6 md:py-8 cursor-pointer text-md md:text-lg
                   ${selectedAnswer === word ? (word === city[currentQuestion].correctWord ? "bg-green-500" : "bg-red-500") : ""}
                   disabled:opacity-100 disabled:pointer-events-none`}
                                 disabled={selectedAnswer !== null}>
