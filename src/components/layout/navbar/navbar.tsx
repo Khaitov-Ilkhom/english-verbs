@@ -111,21 +111,6 @@ const Navbar = ({search}: { search: boolean }) => {
                       </NavLink>
                   ))}
                 </div>
-
-                {/*<div className="w-full mx-auto flex flex-col items-center font-semibold text-lg space-y-2 mt-4">*/}
-                {/*  <NavLink className={`text-xl relative group ${isDarkMode ? "text-white" : "text-slate-900 hover:text-[#505F98]"}`} to="/">*/}
-                {/*    Verbs-Table*/}
-                {/*    <span className={`absolute bottom-0.1 left-1/2 transform -translate-x-1/2 block h-[1px] ${isDarkMode ? "bg-white" : "bg-[#505F98]"} w-0 group-hover:w-full transition-all duration-200`}></span>*/}
-                {/*  </NavLink>*/}
-                {/*  <NavLink className={`text-xl relative group ${isDarkMode ? "text-white" : "text-slate-900 hover:text-[#505F98]"}`} to="/verbs-card">*/}
-                {/*    Verbs-Card*/}
-                {/*    <span className={`absolute bottom-0.1 left-1/2 transform -translate-x-1/2 block h-[1px] ${isDarkMode ? "bg-white" : "bg-[#505F98]"} w-0 group-hover:w-full transition-all duration-200`}></span>*/}
-                {/*  </NavLink>*/}
-                {/*  <NavLink className={`text-xl relative group ${isDarkMode ? "text-white" : "text-slate-900 hover:text-[#505F98]"}`} to="/learn-words">*/}
-                {/*    Learn-words*/}
-                {/*    <span className={`absolute bottom-0.1 left-1/2 transform -translate-x-1/2 block h-[1px] ${isDarkMode ? "bg-white" : "bg-[#505F98]"} w-0 group-hover:w-full transition-all duration-200`}></span>*/}
-                {/*  </NavLink>*/}
-                {/*</div>*/}
               </SheetDescription>
             </SheetHeader>
             <SheetFooter>

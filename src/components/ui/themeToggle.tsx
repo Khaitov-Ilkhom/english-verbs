@@ -8,7 +8,7 @@ export function ThemeToggle() {
 
   return (
       <Button variant="default" size="icon" onClick={toggleTheme}
-              className={`relative overflow-hidden border border-gray-500 ${isDarkMode ? "bg-black" : "border-gray-500 bg-white text-black hover:bg-white"}`}>
+              className={`relative overflow-hidden border border-gray-500 ${isDarkMode ? "bg-black" : "border-gray-500"}`}>
         <AnimatePresence mode="wait">
           {isDarkMode ? (
               <motion.div
