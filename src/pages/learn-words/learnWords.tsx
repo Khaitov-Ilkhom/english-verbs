@@ -3,6 +3,8 @@ import {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {Check, X} from "lucide-react";
 import {useThemeStore} from "@/store/themeStore.ts";
+import Footer from "@/components/layout/footer/footer.tsx";
+import Navbar from "@/components/layout/navbar/navbar.tsx";
 
 type Words = {
   id: number;
@@ -133,8 +135,10 @@ const LearnWords = () => {
   const incorrectAnswers = city.length - correctAnswers;
 
   return (
-      <>
-        <div className={`w-full min-h-[500px] flex justify-center items-center ${isDarkMode ? " text-white" : ""}`}>
+      <div className={`flex flex-col min-h-screen ${isDarkMode ? " text-white bg-[#0E1014]" : ""}`}>
+        <Navbar search={false} />
+
+        <div className="flex-grow w-full min-h-[500px] flex justify-center items-center">
           {isQuizFinished ? (
               <div className="w-full flex flex-col justify-center items-center">
                 <h2 className="text-3xl font-bold mb-2 text-center">{t("Natijalar")}</h2>
@@ -160,7 +164,7 @@ const LearnWords = () => {
                 </Button>
               </div>
           ) : (
-              <div className={`w-full flex justify-center items-center `}>
+              <div className={`flex-grow w-full flex justify-center items-center `}>
                 <div className="w-[350px] md:w-[500px] text-center min-h-[300px]">
                   <h3 className={`text-3xl font-bold mb-6 capitalize ${isDarkMode ? "text-white" : "text-black"}`}>
                     {city[currentQuestion].word}
@@ -203,7 +207,9 @@ const LearnWords = () => {
               </div>
           )}
         </div>
-      </>
+
+        <Footer/>
+      </div>
   );
 };
 
