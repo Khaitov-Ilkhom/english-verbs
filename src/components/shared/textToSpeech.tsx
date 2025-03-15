@@ -24,7 +24,7 @@ const TextToSpeech: React.FC<TextToSpeechProps> = ({text}) => {
   };
 
   return (
-      <Button className="rounded-full w-8 h-8" onClick={handleToggle}>{isPlaying ? <CircleStop/> : <Volume2/>}</Button>
+      <Button className="rounded-full w-8 h-8 border border-gray-500" onClick={handleToggle}>{isPlaying ? <CircleStop/> : <Volume2/>}</Button>
   )
 };
 
