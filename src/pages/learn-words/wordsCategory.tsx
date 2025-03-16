@@ -15,18 +15,21 @@ const WordsCategory = () => {
         <Navbar search={false}/>
 
         <div className="flex flex-grow flex-col px-4 pt-[80px]">
-          <h2 className="text-2xl font-semibold text-center pb-4">Words categories</h2>
-          <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3">
+          <h2 className="text-2xl font-semibold text-center">Words categories</h2>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 py-4">
             {
               categories.map((category, index) => (
                   <div key={category.id} onClick={() => navigate(`/learn-words/${category.id}`)}
-                       className={`border  rounded-xl p-3 hover:shadow-xl hover:scale-105 duration-500`}
+                       className="border rounded-xl p-3 hover:shadow-xl hover:scale-105 duration-500 flex flex-col md:flex-row justify-between gap-1 "
                        style={{backgroundColor: colors[index % colors.length], borderColor: colors[index % colors.length]}}
                   >
-                    <h2 className="font-semibold">{category.title}</h2>
-                    <p className="text-[14px]">Words count: <span
-                        className="font-semibold">{category.words.length}</span></p>
-                    <img className="max-w-[80px]" src={category.img} alt={category.title}/>
+                   <div>
+                     <h2 className="font-semibold">{category.title}</h2>
+                     <p className="text-[14px] md:text-[12px]">Words count: <span className="font-semibold">{category.words.length}</span></p>
+                   </div>
+                   <div className="">
+                     <img className="max-w-[130px] md:max-w-[100px] rounded-lg" src={category.img} alt={category.title}/>
+                   </div>
                   </div>
               ))
             }

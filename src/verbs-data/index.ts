@@ -1,5 +1,18 @@
 import {CategoryT, verbsT, Words} from "@/types/verbs-types.ts";
-import categoryImg from "@/images/book_bookmark.jpg";
+import traveling from "@/images/traveling.jpg";
+import foods from "@/images/foods.jpg";
+import city from "@/images/city_image.jpg"
+import home from "@/images/home_interior.jpg"
+import people from "@/images/people.jpg"
+import freeTime from "@/images/people_free_time.jpg"
+import nature from "@/images/nature.jpg"
+import language from "@/images/languages,.jpg"
+import technology from "@/images/technology.jpg"
+import education from "@/images/education_featur.jpg"
+import fashion from "@/images/fashion.jpg"
+import art from "@/images/art_and_entertainment.jpg"
+import health from "@/images/healthy_lifestyle.jpg"
+import career from "@/images/career.jpg"
 
 export const verbs: verbsT[] = [
   // A
@@ -705,84 +718,84 @@ export const categories: CategoryT[] = [
     id: "1",
     title: "Traveling",
     words: travelingData,
-    img: categoryImg,
+    img: traveling,
   },
   {
     id: "2",
     title: "Foods and Drinks",
     words: foodsAndDrinksData,
-    img: categoryImg,
+    img: foods,
   },
   {
     id: "3",
     title: "City",
     words: cityData,
-    img: categoryImg,
+    img: city,
   },
   {
     id: "4",
     title: "Home",
     words: homeData,
-    img: categoryImg,
+    img: home,
   },
   {
     id: "5",
     title: "People",
     words: peopleData,
-    img: categoryImg,
+    img: people,
   },
   {
     id: "6",
     title: "Free time Activities",
     words: freeTimeActivitiesData,
-    img: categoryImg,
+    img: freeTime,
   },
   {
     id: "7",
     title: "Nature",
     words: natureData,
-    img: categoryImg
+    img: nature
   },
   {
     id: "8",
     title: "Language",
     words: languageData,
-    img: categoryImg,
+    img: language,
   },
   {
     id: "9",
     title: "Technology",
     words: technologyData,
-    img: categoryImg,
+    img: technology,
   },
   {
     id: "10",
     title: "Education",
     words: educationData,
-    img: categoryImg,
+    img: education,
   },
   {
     id: "11",
     title: "Fashion",
     words: fashionData,
-    img: categoryImg,
+    img: fashion,
   },
   {
     id: "12",
-    title: "Art & Entertainment",
+    title: "Art",
     words: artEntertainmentData,
-    img: categoryImg,
+    img: art,
   },
   {
     id: "13",
     title: "Health",
     words: healthData,
-    img: categoryImg,
+    img: health,
   },
   {
     id: "14",
     title: "Career",
     words: careerData,
-    img: categoryImg,
+    img: career,
   },
 ]
