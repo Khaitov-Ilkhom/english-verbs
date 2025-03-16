@@ -21,10 +21,7 @@ const WordsCategory = () => {
               categories.map((category, index) => (
                   <div key={category.id} onClick={() => navigate(`/learn-words/${category.id}`)}
                        className={`border  rounded-xl p-3 hover:shadow-xl hover:scale-105 duration-500`}
-                       style={{
-                         backgroundColor: colors[index % colors.length],
-                         borderColor: colors[index % colors.length]
-                       }}
+                       style={{backgroundColor: colors[index % colors.length], borderColor: colors[index % colors.length]}}
                   >
                     <h2 className="font-semibold">{category.title}</h2>
                     <p className="text-[14px]">Words count: <span
