@@ -21,6 +21,7 @@ const Navbar = ({search}: { search: boolean }) => {
   const handleClose = () => {
     setOpen(false);
   }
+
   return (
       <nav
           className={`fixed top-0 max-w-[1440px] w-full mx-auto ${isDarkMode ? "bg-[#0E1014]/70 text-white" : "bg-background/95 supports-[backdrop-filter]:bg-background/60"} backdrop-blur shadow-xl z-50`}>
