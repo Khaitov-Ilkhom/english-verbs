@@ -475,86 +475,16 @@ export const verbs: verbsT[] = [
 ]
 
 export const cityData: Words[] = [
-  {
-    id: 1,
-    word: "map",
-    questionWords: ["taxi", "car", "platform", "map"],
-    correctWord: "map",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 2,
-    word: "taxi",
-    questionWords: ["taxi", "car", "map", "platform"],
-    correctWord: "taxi",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 3,
-    word: "car",
-    questionWords: ["taxi", "platform", "map", "car",],
-    correctWord: "car",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 4,
-    word: "platform",
-    questionWords: ["taxi", "car", "map", "platform",],
-    correctWord: "platform",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 5,
-    word: "scooter",
-    questionWords: ["underground", "passenger", "train", "scooter"],
-    correctWord: "scooter",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 6,
-    word: "underground",
-    questionWords: ["underground", "train", "scooter", "passenger",],
-    correctWord: "underground",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 7,
-    word: "passenger",
-    questionWords: ["train", "scooter", "underground", "passenger"],
-    correctWord: "passenger",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 8,
-    word: "train",
-    questionWords: ["passenger", "train", "underground", "scooter"],
-    correctWord: "train",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 9,
-    word: "accident",
-    questionWords: ["helicopter", "truck", "high-speed", "accident"],
-    correctWord: "accident",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 10,
-    word: "helicopter",
-    questionWords: ["helicopter", "accident", "truck", "high-speed",],
-    correctWord: "helicopter",
-    isCorrect: false,
-    selectedAnswer: ""
-  }
+  {id: 1, word: "map", questionWords: ["taxi", "car", "platform", "map"], correctWord: "map", isCorrect: false, selectedAnswer: ""},
+  {id: 2, word: "taxi", questionWords: ["taxi", "car", "map", "platform"], correctWord: "taxi", isCorrect: false, selectedAnswer: ""},
+  {id: 3, word: "car", questionWords: ["taxi", "platform", "map", "car",], correctWord: "car", isCorrect: false, selectedAnswer: ""},
+  {id: 4, word: "platform", questionWords: ["taxi", "car", "map", "platform",], correctWord: "platform", isCorrect: false, selectedAnswer: ""},
+  {id: 5, word: "scooter", questionWords: ["underground", "passenger", "train", "scooter"], correctWord: "scooter", isCorrect: false, selectedAnswer: ""},
+  {id: 6, word: "underground", questionWords: ["underground", "train", "scooter", "passenger",], correctWord: "underground", isCorrect: false, selectedAnswer: ""},
+  {id: 7, word: "passenger", questionWords: ["train", "scooter", "underground", "passenger"], correctWord: "passenger", isCorrect: false, selectedAnswer: ""},
+  {id: 8, word: "train", questionWords: ["passenger", "train", "underground", "scooter"], correctWord: "train", isCorrect: false, selectedAnswer: ""},
+  {id: 9, word: "accident", questionWords: ["helicopter", "truck", "high-speed", "accident"], correctWord: "accident", isCorrect: false, selectedAnswer: ""},
+  {id: 10, word: "helicopter", questionWords: ["helicopter", "accident", "truck", "high-speed",], correctWord: "helicopter", isCorrect: false, selectedAnswer: ""}
 ];
 export const travelingData: Words[] = [
   { id: 1, word: "airport", questionWords: ["airport", "hotel", "luggage", "passport"], correctWord: "airport", isCorrect: false, selectedAnswer: "" },
@@ -714,88 +644,18 @@ export const careerData: Words[] = [
 ];
 
 export const categories: CategoryT[] = [
-  {
-    id: "1",
-    title: "Traveling",
-    words: travelingData,
-    img: traveling,
-  },
-  {
-    id: "2",
-    title: "Foods and Drinks",
-    words: foodsAndDrinksData,
-    img: foods,
-  },
-  {
-    id: "3",
-    title: "City",
-    words: cityData,
-    img: city,
-  },
-  {
-    id: "4",
-    title: "Home",
-    words: homeData,
-    img: home,
-  },
-  {
-    id: "5",
-    title: "People",
-    words: peopleData,
-    img: people,
-  },
-  {
-    id: "6",
-    title: "Free time Activities",
-    words: freeTimeActivitiesData,
-    img: freeTime,
-  },
-  {
-    id: "7",
-    title: "Nature",
-    words: natureData,
-    img: nature
-  },
-  {
-    id: "8",
-    title: "Language",
-    words: languageData,
-    img: language,
-  },
-  {
-    id: "9",
-    title: "Technology",
-    words: technologyData,
-    img: technology,
-  },
-  {
-    id: "10",
-    title: "Education",
-    words: educationData,
-    img: education,
-  },
-  {
-    id: "11",
-    title: "Fashion",
-    words: fashionData,
-    img: fashion,
-  },
-  {
-    id: "12",
-    title: "Art",
-    words: artEntertainmentData,
-    img: art,
-  },
-  {
-    id: "13",
-    title: "Health",
-    words: healthData,
-    img: health,
-  },
-  {
-    id: "14",
-    title: "Career",
-    words: careerData,
-    img: career,
-  },
+  {id: "1", title: "Traveling", words: travelingData, img: traveling,},
+  {id: "2", title: "Foods and Drinks", words: foodsAndDrinksData, img: foods,},
+  {id: "3", title: "City", words: cityData, img: city,},
+  {id: "4", title: "Home", words: homeData, img: home,},
+  {id: "5", title: "People", words: peopleData, img: people,},
+  {id: "6", title: "Free time Activities", words: freeTimeActivitiesData, img: freeTime,},
+  {id: "7", title: "Nature", words: natureData, img: nature},
+  {id: "8", title: "Language", words: languageData, img: language,},
+  {id: "9", title: "Technology", words: technologyData, img: technology,},
+  {id: "10", title: "Education", words: educationData, img: education,},
+  {id: "11", title: "Fashion", words: fashionData, img: fashion,},
+  {id: "12", title: "Art", words: artEntertainmentData, img: art,},
+  {id: "13", title: "Health", words: healthData, img: health,},
+  {id: "14", title: "Career", words: careerData, img: career,},
 ]
