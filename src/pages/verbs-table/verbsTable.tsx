@@ -38,7 +38,7 @@ const VerbsTable = () => {
   const filteredVerbs: verbsT[] = verbs.filter((verb) => verb.verb1.toLowerCase().includes(searchValue.toLowerCase()))
 
   return (
-      <div>
+      <>
         <div className="flex justify-center w-full gap-2 px-2 pb-4">
           <div className="relative w-[250px] md:w-[450px]">
             <Input
@@ -126,7 +126,7 @@ const VerbsTable = () => {
           </div>
 
         </div>
-      </div>
+      </>
   )
 }
 export default VerbsTable
