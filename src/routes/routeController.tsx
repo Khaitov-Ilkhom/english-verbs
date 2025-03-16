@@ -4,7 +4,7 @@ import {SuspenseElement as Suspense} from "../utils/index.tsx";
 
 const Home = lazy(() => import('../pages/home/home.tsx'))
 const VerbsCard = lazy(() => import("../pages/verbs-card/verbsCard.tsx"))
-const LearnWords = lazy(() => import("@/pages/learn-words/learnWords.tsx"))
+const LearnWords = lazy(() => import("@/pages/learn-words/wordsCategory.tsx"))
 
 const RouteController = () => {
   return (
