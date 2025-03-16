@@ -4,15 +4,21 @@ import {useTranslation} from "react-i18next";
 import {Check, X} from "lucide-react";
 import {useThemeStore} from "@/store/themeStore.ts";
 import Navbar from "@/components/layout/navbar/navbar.tsx";
-import {Words} from "@/types/verbs-types.ts";
+import {CategoryT, Words} from "@/types/verbs-types.ts";
+import {useParams} from "react-router-dom";
+import {categories} from "@/verbs-data";
+import Footer from "@/components/layout/footer/footer.tsx";
 
-const LearnWords = ({words}: { words: Words[] }) => {
+const LearnWords = () => {
   const {t} = useTranslation();
   const {isDarkMode} = useThemeStore();
+  const {id} = useParams()
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [city, setCity] = useState<Words[]>(words);
   const [isQuizFinished, setIsQuizFinished] = useState(false);
+
+  const category: CategoryT = categories.find(category => category.id === id)!;
+  const [city, setCity] = useState<Words[]>(category?.words);
 
   const handleAnswerClick = (answer: string) => {
     setSelectedAnswer(answer);
@@ -34,7 +40,7 @@ const LearnWords = ({words}: { words: Words[] }) => {
 
   const handleRestart = () => {
     setCurrentQuestion(0);
-    setCity(words);
+    setCity(category?.words);
     setSelectedAnswer(null);
     setIsQuizFinished(false);
   };
@@ -46,9 +52,9 @@ const LearnWords = ({words}: { words: Words[] }) => {
       <div className={`min-h-screen ${isDarkMode ? " text-white bg-[#0E1014]" : ""}`}>
         <Navbar search={false}/>
 
-        <div className="w-full min-h-[650px] flex justify-center items-center pt-10">
+        <div className="w-full min-h-[620px] flex justify-center items-center pt-10">
           {isQuizFinished ? (
-              <div className="w-full flex flex-col justify-center items-center">
+              <div className="w-full flex flex-col justify-center items-center pt-4">
                 <h2 className="text-3xl font-bold mb-2 text-center">{t("Natijalar")}</h2>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-2">
                   <p className="text-lg">{t("To'g'ri javoblar")}: <span
@@ -115,6 +121,8 @@ const LearnWords = ({words}: { words: Words[] }) => {
               </div>
           )}
         </div>
+
+        <Footer />
       </div>
   );
 };

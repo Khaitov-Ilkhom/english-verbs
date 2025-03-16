@@ -5,6 +5,7 @@ import {SuspenseElement as Suspense} from "../utils/index.tsx";
 const Home = lazy(() => import('../pages/home/home.tsx'))
 const VerbsCard = lazy(() => import("../pages/verbs-card/verbsCard.tsx"))
 const LearnWords = lazy(() => import("@/pages/learn-words/wordsCategory.tsx"))
+const LearnWordsTest = lazy(() => import("../pages/learn-words/learnWords.tsx"))
 
 const RouteController = () => {
   return (
@@ -20,6 +21,10 @@ const RouteController = () => {
         {
           path: "learn-words",
           element: <Suspense><LearnWords/></Suspense>
+        },
+        {
+          path: "learn-words/:id",
+          element: <Suspense><LearnWordsTest/></Suspense>
         }
       ])
   )

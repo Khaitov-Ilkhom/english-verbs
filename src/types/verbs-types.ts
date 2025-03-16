@@ -8,7 +8,7 @@ export interface verbsT {
 }
 
 export interface CategoryT {
-  id: number;
+  id: string;
   title: string;
   words: Words[],
   img?: string;
