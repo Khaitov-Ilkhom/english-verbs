@@ -6,3 +6,19 @@ export interface verbsT {
   pronunciation2: string
   pronunciation3: string
 }
+
+export interface CategoryT {
+  id: number;
+  title: string;
+  words: Words[],
+  img?: string;
+}
+
+export interface Words {
+  id: number;
+  word: string;
+  questionWords: string[];
+  correctWord: string;
+  isCorrect: boolean;
+  selectedAnswer: string;
+};

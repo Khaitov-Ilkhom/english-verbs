@@ -3,107 +3,15 @@ import {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {Check, X} from "lucide-react";
 import {useThemeStore} from "@/store/themeStore.ts";
-import Footer from "@/components/layout/footer/footer.tsx";
 import Navbar from "@/components/layout/navbar/navbar.tsx";
+import {Words} from "@/types/verbs-types.ts";
 
-type Words = {
-  id: number;
-  word: string;
-  questionWords: string[];
-  correctWord: string;
-  isCorrect: boolean;
-  selectedAnswer: string;
-};
-
-const cityData: Words[] = [
-  {
-    id: 1,
-    word: "map",
-    questionWords: ["taxi", "car", "platform", "map"],
-    correctWord: "map",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 2,
-    word: "taxi",
-    questionWords: ["taxi", "car", "map", "platform"],
-    correctWord: "taxi",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 3,
-    word: "car",
-    questionWords: ["taxi", "platform", "map", "car",],
-    correctWord: "car",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 4,
-    word: "platform",
-    questionWords: ["taxi", "car", "map", "platform",],
-    correctWord: "platform",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 5,
-    word: "scooter",
-    questionWords: ["underground", "passenger", "train", "scooter"],
-    correctWord: "scooter",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 6,
-    word: "underground",
-    questionWords: ["underground", "train", "scooter", "passenger",],
-    correctWord: "underground",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 7,
-    word: "passenger",
-    questionWords: ["train", "scooter", "underground", "passenger"],
-    correctWord: "passenger",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 8,
-    word: "train",
-    questionWords: ["passenger", "train", "underground", "scooter"],
-    correctWord: "train",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 9,
-    word: "accident",
-    questionWords: ["helicopter", "truck", "high-speed", "accident"],
-    correctWord: "accident",
-    isCorrect: false,
-    selectedAnswer: ""
-  },
-  {
-    id: 10,
-    word: "helicopter",
-    questionWords: ["helicopter", "accident", "truck", "high-speed",],
-    correctWord: "helicopter",
-    isCorrect: false,
-    selectedAnswer: ""
-  }
-];
-
-const LearnWords = () => {
+const LearnWords = ({words}: { words: Words[] }) => {
   const {t} = useTranslation();
   const {isDarkMode} = useThemeStore();
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [city, setCity] = useState<Words[]>(cityData);
+  const [city, setCity] = useState<Words[]>(words);
   const [isQuizFinished, setIsQuizFinished] = useState(false);
 
   const handleAnswerClick = (answer: string) => {
@@ -126,7 +34,7 @@ const LearnWords = () => {
 
   const handleRestart = () => {
     setCurrentQuestion(0);
-    setCity(cityData);
+    setCity(words);
     setSelectedAnswer(null);
     setIsQuizFinished(false);
   };
@@ -135,10 +43,10 @@ const LearnWords = () => {
   const incorrectAnswers = city.length - correctAnswers;
 
   return (
-      <div className={`flex flex-col min-h-screen ${isDarkMode ? " text-white bg-[#0E1014]" : ""}`}>
+      <div className={`min-h-screen ${isDarkMode ? " text-white bg-[#0E1014]" : ""}`}>
         <Navbar search={false}/>
 
-        <div className="flex-grow w-full min-h-[650px] flex justify-center items-center pt-10">
+        <div className="w-full min-h-[650px] flex justify-center items-center pt-10">
           {isQuizFinished ? (
               <div className="w-full flex flex-col justify-center items-center">
                 <h2 className="text-3xl font-bold mb-2 text-center">{t("Natijalar")}</h2>
@@ -164,7 +72,7 @@ const LearnWords = () => {
                 </Button>
               </div>
           ) : (
-              <div className={`flex-grow w-full flex justify-center items-center `}>
+              <div className={`w-full flex justify-center items-center `}>
                 <div className="w-[350px] md:w-[500px] text-center ">
                   <h3 className={`text-3xl font-bold mb-6 capitalize ${isDarkMode ? "text-white" : "text-black"}`}>
                     {city[currentQuestion].word}
@@ -207,8 +115,6 @@ const LearnWords = () => {
               </div>
           )}
         </div>
-
-        <Footer/>
       </div>
   );
 };
