@@ -2,10 +2,12 @@ import Navbar from "@/components/layout/navbar/navbar.tsx";
 import Footer from "@/components/layout/footer/footer.tsx";
 import {useThemeStore} from "@/store/themeStore.ts";
 import {CategoryT, Words} from "@/types/verbs-types.ts";
-
-import categoryImg from "../../images/book_bookmark.jpg"
 import LearnWords from "@/components/layout/learn-words/learnWords.tsx";
 import {useState} from "react";
+
+import categoryImg from "../../images/book_bookmark.jpg"
+
+const colors: string[] = ["#6E88D4", "#1DAC8B", "#E2BB18", "#F4406B", "#C862D8", "#47B66F", "#FBA04B"]
 
 const cityData: Words[] = [
   {
@@ -99,37 +101,37 @@ const WordsCategory = () => {
       id: 1,
       title: "Traveling",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 2,
       title: "Foods and Drinks",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 3,
       title: "City",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 4,
       title: "Home",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 5,
       title: "People",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 6,
       title: "Free time Activities",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 7,
@@ -141,48 +143,48 @@ const WordsCategory = () => {
       id: 8,
       title: "Language",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 9,
       title: "Technology",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 10,
       title: "Education",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 11,
       title: "Fashion",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 12,
       title: "Art & Entertainment",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 13,
       title: "Health",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
     {
       id: 14,
       title: "Career",
       words: cityData,
-      img: categoryImg
+      img: categoryImg,
     },
   ]
 
   const startLearnWords = (words: Words[]) => {
-      setStart(words);
+    setStart(words);
   }
 
   return (
@@ -195,8 +197,11 @@ const WordsCategory = () => {
                 <h2 className="text-2xl font-semibold text-center pb-4">Words categories</h2>
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3">
                   {
-                    categories.map((category) => (
-                        <div key={category.id} onClick={() => startLearnWords(category.words)} className="border border-gray-500 rounded-xl p-3 hover:shadow-xl duration-500">
+                    categories.map((category, index) => (
+                        <div key={category.id} onClick={() => startLearnWords(category.words)}
+                             className={`border  rounded-xl p-3 hover:shadow-xl hover:scale-105 duration-500`}
+                             style={{backgroundColor: colors[index % colors.length], borderColor: colors[index % colors.length]}}
+                        >
                           <h2 className="font-semibold">{category.title}</h2>
                           <p className="text-[14px]">Words count: <span
                               className="font-semibold">{category.words.length}</span></p>
