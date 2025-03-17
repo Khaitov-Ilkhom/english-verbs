@@ -7,11 +7,11 @@ import {useEffect} from "react";
 import Navbar from "@/components/layout/navbar/navbar.tsx";
 import Footer from "@/components/layout/footer/footer.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs.tsx";
-import BeginnerVerbs from "@/components/layout/table-verbs-by-level/beginnerVerbs.tsx";
-import ElementaryVerbs from "@/components/layout/table-verbs-by-level/elementaryVerbs.tsx";
-import IntermediateVerbs from "@/components/layout/table-verbs-by-level/intermediateVerbs.tsx";
 import useTabStore from "@/store/tabStore.ts";
 import AllCards from "@/components/layout/card-verbs-by-level/allCards.tsx";
+import BeginnerCards from "@/components/layout/card-verbs-by-level/beginnerCards.tsx";
+import ElementaryCards from "@/components/layout/card-verbs-by-level/elementaryCards.tsx";
+import IntermediateCards from "@/components/layout/card-verbs-by-level/intermediateCards.tsx";
 
 const VerbsCard = () => {
   const {isDarkMode} = useThemeStore();
@@ -86,13 +86,13 @@ const VerbsCard = () => {
                 <AllCards verbs={filteredVerbs}/>
               </TabsContent>
               <TabsContent value="beginner" className="w-full">
-                <BeginnerVerbs verbs={filteredVerbs}/>
+                <BeginnerCards verbs={filteredVerbs}/>
               </TabsContent>
               <TabsContent value="elementary" className="w-full">
-                <ElementaryVerbs verbs={filteredVerbs}/>
+                <ElementaryCards verbs={filteredVerbs}/>
               </TabsContent>
               <TabsContent value="intermediate" className="w-full">
-                <IntermediateVerbs verbs={filteredVerbs}/>
+                <IntermediateCards verbs={filteredVerbs}/>
               </TabsContent>
             </Tabs>
           </div>
