@@ -66,8 +66,7 @@ const VerbsCard = () => {
                     }`}
                 />
                 {searchParams.get("search") && (
-                    <button
-                        onClick={handleClear}
+                    <button onClick={handleClear}
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
                     >
                       <CircleX size={24}/>
@@ -75,6 +74,7 @@ const VerbsCard = () => {
                 )}
               </div>
             </div>
+
             <Tabs defaultValue={activeTab} onValueChange={setActiveTab} className="w-full px-2">
               <TabsList className="flex w-full max-w-lg mx-auto justify-between items-center mb-6">
                 <TabsTrigger value="all">All</TabsTrigger>

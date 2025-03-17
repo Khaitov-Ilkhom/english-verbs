@@ -2,9 +2,7 @@ import React, {useState} from "react";
 import {Button} from "@/components/ui/button.tsx";
 import {CircleStop, Volume2} from "lucide-react";
 
-type TextToSpeechProps = {
-  text: string;
-};
+type TextToSpeechProps = { text: string; };
 
 const TextToSpeech: React.FC<TextToSpeechProps> = ({text}) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -25,10 +23,7 @@ const TextToSpeech: React.FC<TextToSpeechProps> = ({text}) => {
   };
 
   return (
-      <Button
-          className="rounded-full w-8 h-8 border border-gray-500"
-          onClick={handleToggle}
-      >
+      <Button className="rounded-full w-8 h-8 border border-gray-500" onClick={handleToggle}>
         {isPlaying ? <CircleStop/> : <Volume2/>}
       </Button>
   );
