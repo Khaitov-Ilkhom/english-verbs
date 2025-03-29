@@ -21,7 +21,7 @@ const WordsCategory = () => {
               {
                 categories.map((category, index) => (
                     <div key={category.id} onClick={() => navigate(`/learn-words/${category.id}`)}
-                         className="border rounded-xl p-3 hover:shadow-xl hover:scale-105 duration-500 flex flex-col md:flex-row justify-between gap-1 "
+                         className="border rounded-xl p-3 hover:shadow-xl hover:scale-105 duration-500 flex flex-col md:flex-row justify-between gap-1 cursor-pointer"
                          style={{backgroundColor: colors[index % colors.length], borderColor: colors[index % colors.length]}}
                     >
                       <div>
