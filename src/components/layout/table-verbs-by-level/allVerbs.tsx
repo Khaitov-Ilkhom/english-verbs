@@ -33,7 +33,7 @@ const AllVerbs = ({verbs}: { verbs: verbsT[] }) => {
                           initial={{opacity: 0, y: 10}}
                           animate={{opacity: 1, y: 0}}
                           transition={{duration: 0.3, delay: index * 0.01}}
-                          className="border-b hover:bg-muted/50 duration-400"
+                          className={`${isDarkMode ? index % 2 === 0 ? "bg-[#17181B]" : "bg-gray-900" : index % 2 === 0 ? "bg-white" : "bg-gray-200/80"} border-b hover:bg-muted/50 duration-400`}
                       >
                         <TableCell className="w-12 text-center font-semibold">{index + 1}</TableCell>
                         <TableCell className="w-1/4 font-medium md:pl-4 pl-2">
