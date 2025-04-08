@@ -1,9 +1,9 @@
 import {Moon, Sun} from "lucide-react";
-import {Button} from "@/components/ui/button";
+import {Button} from "@/components/ui/button.tsx";
 import {useThemeStore} from "@/store/themeStore.ts";
 import {motion, AnimatePresence} from "framer-motion";
 
-export function ThemeToggle() {
+const ThemeToggle = () => {
   const {isDarkMode, toggleTheme} = useThemeStore();
 
   return (
@@ -38,3 +38,5 @@ export function ThemeToggle() {
       </Button>
   );
 }
+
+export default ThemeToggle;

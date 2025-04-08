@@ -1,4 +1,4 @@
-import {ThemeToggle} from "@/components/ui/themeToggle.tsx";
+import ThemeToggle from "@/components/shared/themeToggle.tsx";
 import Language from "@/components/shared/language.tsx";
 import {Link, NavLink} from "react-router-dom";
 import {useThemeStore} from "@/store/themeStore.ts";
